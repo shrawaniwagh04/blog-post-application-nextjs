@@ -1,0 +1,13 @@
+/* Styles for PostPage */ 
+.BlogContainer{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-self: center;
+  gap: 1rem;
+
+  padding: 2rem;
+  border: thin solid transparent;
+  background-color: rgb(63, 63, 63);
+  box-shadow: 6px 6px  #696969;
+}

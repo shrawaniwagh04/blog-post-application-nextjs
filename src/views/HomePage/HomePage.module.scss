@@ -1,0 +1,8 @@
+/* Styles for HomePage */ 
+.Header{
+  padding: 1rem;
+  border-bottom: .25rem solid;
+  border-image: linear-gradient(45deg, rgba(65, 89, 208, 1.000) 0.000%, rgba(200, 79, 192, 1.000) 50.000%, rgba(255, 205, 112, 1.000) 100.000%) ;
+  border-image-slice: 1;
+  background-color: rgb(43, 43, 43);
+}
