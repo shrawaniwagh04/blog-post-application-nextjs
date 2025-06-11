@@ -5,5 +5,5 @@ export type Post = {
 };
 
 export type Props = {
-  posts: Post[];
+  post: Post;
 };

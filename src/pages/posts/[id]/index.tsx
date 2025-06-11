@@ -1,30 +1,19 @@
+import { getPost, getPosts } from '@/serivces/post.services';
 import PostPage from '@/views/PostPage/PostPage';
 import { GetStaticPaths, GetStaticProps } from 'next';
-
-type Post = {
-  id: number;
-  title: string;
-  body: string;
-};
-
-type Props = {
-  post: Post;
-};
+import { Props } from './id.types';
+import type {Post} from './id.types';
 
 export default function Post({ post }: Props) {
-  return (
-    <PostPage post={post}/>
-  );
+  return <PostPage post={post}/>;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-  const posts: Post[] = await res.json();
+  const posts : Post[] = await getPosts();
 
   const paths = posts.map((post) => ({
     params: { id: post.id.toString() },
   }));
-
 
   return {
     paths,
@@ -33,9 +22,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params?.id}`);
-  const post = await res.json();
-
+  const post = await getPost(params?.id)
   return {
     props: {
       post,

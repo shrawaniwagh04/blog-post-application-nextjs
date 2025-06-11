@@ -2,9 +2,6 @@ import Link from "next/link";
 import styles from "./HomePage.module.scss";
 import type { HomePageProps } from "./HomePage.types.ts";
 
-
- 
-
 const HomePage = ({}: HomePageProps) => {
   return (
     <div >
