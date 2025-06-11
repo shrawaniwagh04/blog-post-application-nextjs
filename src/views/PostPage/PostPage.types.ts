@@ -9,6 +9,3 @@ type Post = {
   body: string;
 };
 
-// export type Props = {
-//   post: Post;
-// };
